@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片文字编辑器</title>
+    <!-- 字体链接 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>图片文字编辑器</h1>
+        
+        <div class="editor-container">
+            <div class="canvas-container">
+                <canvas id="imageCanvas"></canvas>
+            </div>
+            
+            <div class="controls">
+                <div class="text-input">
+                    <label for="textInput">输入文字:</label>
+                    <textarea id="textInput" placeholder="请输入要添加的文字"></textarea>
+                    <div class="text-info">
+                        <p>文字将自动换行显示，换行后向下延伸</p>
+                        <p>固定设置: 字体大小 80px | 位置 50%,40%</p>
+                        <p>英文使用 Instrument Serif | 中文使用思源宋体ExtraLight</p>
+                    </div>
+                </div>
+                
+                <!-- 隐藏字体大小控制 -->
+                <div class="text-properties" style="display: none;">
+                    <div class="property">
+                        <label for="fontSize">字体大小:</label>
+                        <input type="range" id="fontSize" min="10" max="100" value="80">
+                        <span id="fontSizeValue">80px</span>
+                    </div>
+                    
+                    <div class="property">
+                        <label for="fontColor">字体颜色:</label>
+                        <input type="color" id="fontColor" value="#ffffff">
+                    </div>
+                    
+                    <div class="property">
+                        <label for="fontFamily">字体:</label>
+                        <select id="fontFamily">
+                           <!-- <option value="Arial">Arial</option> -->
+                            <!-- <option value="SimSun">宋体</option> -->
+                            <!-- <option value="SimHei">黑体</option> -->
+                            <!-- <option value="Microsoft YaHei">微软雅黑</option> -->
+                            <!-- <option value="KaiTi">楷体</option> -->
+                            <option value="Instrument Serif" selected>Instrument Serif</option>
+                            <option value="Noto Serif SC">思源宋体</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- 隐藏位置控制 -->
+                <div class="position-controls" style="display: none;">
+                    <div class="property">
+                        <label for="textX">水平位置:</label>
+                        <input type="range" id="textX" min="0" max="100" value="50">
+                        <span id="textXValue">50%</span>
+                    </div>
+                    
+                    <div class="property">
+                        <label for="textY">垂直位置:</label>
+                        <input type="range" id="textY" min="0" max="100" value="50">
+                        <span id="textYValue">50%</span>
+                    </div>
+                </div>
+                
+                <div class="buttons">
+                    <button id="resetBtn">重置</button>
+                    <button id="downloadBtn">下载图片</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html> 
