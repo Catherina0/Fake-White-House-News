@@ -13,6 +13,32 @@
     unicode-range: U+4E00-9FFF, U+3400-4DBF, U+F900-FAFF, U+3000-303F, U+FF00-FFEF;
 }
 
+/* GitHub Corner 样式 */
+.github-corner:hover .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+    0%, 100% { transform: rotate(0); }
+    20%, 60% { transform: rotate(-25deg); }
+    40%, 80% { transform: rotate(10deg); }
+}
+
+/* 在小屏幕上反转动画效果，提高性能 */
+@media (max-width: 500px) {
+    .github-corner:hover .octo-arm {
+        animation: none;
+    }
+    .github-corner .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+    }
+    /* 确保GitHub角在手机上的显示尺寸合适 */
+    .github-corner svg {
+        width: 60px;
+        height: 60px;
+    }
+}
+
 body {
     font-family: 'Microsoft YaHei', sans-serif;
     background-color: #f5f5f5;
